@@ -9,7 +9,7 @@ if(!isMenuOpen) return null;
 
     return(
         <div className="text-center">
-            <div className="pt-1 w-[14rem]">
+            <div className="pt-1 w-[14rem] sm:w-[14rem] md:w-[14rem] lg:w-[14rem] xl:w-[14rem] 2xl:w-[14rem]">
                 <ul className="border border-gray-100  shadow-lg p-4"> 
                     <li><Link to = "/">Home</Link></li>
                     <li>Shorts</li>
@@ -26,11 +26,10 @@ if(!isMenuOpen) return null;
             </div>
             <div className="border border-gray-100  shadow-lg p-4">
                 <h1 className="font-bold">Subscriptions</h1>
-          
             </div>
             <div className="border border-gray-100 shadow-lg p-4" >
                 <h1 className="font-bold ">Explore</h1>
-                <ul  > 
+                <ul> 
                     <li>Trending</li>
                     <li>Shopping</li>
                     <li>Music</li>
@@ -38,7 +37,6 @@ if(!isMenuOpen) return null;
                     <li>Live</li>
                     <li>Gaming</li>
                 </ul>
-          
             </div>
             <div>
             <ul className="border border-gray-100  shadow-lg p-4"> 

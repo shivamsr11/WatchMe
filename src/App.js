@@ -12,29 +12,29 @@ const appRouter = createBrowserRouter([{
   path : "/",
   element : <Body />,
   children : [
-    { path : "/",
-  element : <MainContainer />
-},
-{
-  path : "/watch",
-  element : <WatchPage />
-},
-{
-  path : "/demo",
-  element : <Demo />
-}
-   
+    { 
+      path : "/",
+      element : <MainContainer />
+    },
+    {
+      path : "/watch",
+      element : <WatchPage />
+    },
+    {
+      path : "/demo",
+      element : <Demo />
+    }
   ]
 }])
 
 function App() {
   return (
     <Provider store = {store}>
-    <div>
-      <Header />
-<RouterProvider router={appRouter}/>
-          </div>
-        </Provider>
+      <div>
+        <Header />
+          <RouterProvider router={appRouter}/>
+      </div>
+    </Provider>
   );
 }
 

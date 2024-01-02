@@ -9,7 +9,6 @@ const store = configureStore({
         search : searchSlice,
         chat : chatSlice
     }
-
 })
 
 export default store;
