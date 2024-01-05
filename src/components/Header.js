@@ -4,11 +4,17 @@ import { useDispatch, useSelector } from "react-redux";
 import {toggleMenu} from "../utils/appSlice";
 import { HEADER_DROPDOWN, USER_ICON, YOUTUBE_LOGO, YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
+import { useNavigate } from "react-router-dom";
+import { addUser, removeUser } from '../utils/userSlice';
+import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+
 
 const Header = () =>{
     const [searchQuery, setSearchQuery] = useState("")
     const [suggestions, setSuggestions] = useState([])
     const [showSuggestions, setShowSuggestions] = useState(false)
+    const navigate = useNavigate();
+    const user = useSelector(store => store?.user)
     const dispatch = useDispatch();
     const searchCache = useSelector((store) => store.search)
 
@@ -39,6 +45,35 @@ const Header = () =>{
     const toggleMenuHandler = () =>{
         dispatch(toggleMenu())
     }
+    const auth = getAuth();
+
+
+    const handleSignout = () => {
+        signOut(auth).then(() => {
+          console.log("signout")
+          navigate("/")
+          // Sign-out successful.
+        }).catch((error) => {
+          // An error happened.
+        });
+      }
+      useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          if (user) {
+            // User is signed in, see docs for a list of available properties
+            const { uid, email, displayName } = user;
+            dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
+            navigate("/app")
+          } else {
+            dispatch(removeUser())
+            navigate("/")
+            // User is signed out
+          }
+        });
+        // unsubscribe when component unmounts
+        return () => unsubscribe();
+      }, [])
+
     return(
         <div className=" flex justify-between p-2 mx-4 shadow-lg">
             <div className="flex ">
@@ -66,7 +101,7 @@ const Header = () =>{
                 </div>}
             </div>
             <div className="pt-2">
-                <img className = "h-8  ml-4 " alt = "user-logo" src = {USER_ICON} />
+                <img className = "h-8  ml-4 cursor-pointer " alt = "user-logo" onClick = {handleSignout} src = {USER_ICON} />
             </div>
         </div>
     )

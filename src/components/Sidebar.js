@@ -11,7 +11,7 @@ if(!isMenuOpen) return null;
         <div className="text-center">
             <div className="pt-1 w-[14rem] sm:w-[14rem] md:w-[14rem] lg:w-[14rem] xl:w-[14rem] 2xl:w-[14rem]">
                 <ul className="border border-gray-100  shadow-lg p-4"> 
-                    <li><Link to = "/">Home</Link></li>
+                    <li><Link to = "/app">Home</Link></li>
                     <li>Shorts</li>
                     <li>Subscription</li>
                 </ul>

@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import Header from "./Header";
 
 const Body = () => {
     return (
-        <div className="flex  h-[88vh] overflow-y-auto " >
+        <>
+        <Header />
+        <div className="flex  h-[87vh] overflow-y-auto " >
             <div className="px-2  m-2" >
                 <Sidebar/>
             </div> 
@@ -11,6 +14,7 @@ const Body = () => {
                 <Outlet />
             </div>
         </div>
+        </>
     )
 }
 

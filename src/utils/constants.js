@@ -12,3 +12,6 @@ export const HEADER_DROPDOWN = "https://cdn0.iconfinder.com/data/icons/action-gl
 
 export const YOUTUBE_LOGO = "https://logos-world.net/wp-content/uploads/2020/04/YouTube-Logo-2017-present.jpg";
 
+export const BG_IMG = "https://img.freepik.com/free-photo/pile-3d-play-button-logos_1379-880.jpg?size=626&ext=jpg";
+
+
