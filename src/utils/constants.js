@@ -1,4 +1,7 @@
-const YOUTUBE_API_KEY = "AIzaSyDuXhYrY6UHX8ye8_MRRMueepFqVaVTBFw";
+// const YOUTUBE_API_KEY = "AIzaSyDuXhYrY6UHX8ye8_MRRMueepFqVaVTBFw";
+
+const YOUTUBE_API_KEY = "AIzaSyBtamgKDIzA4oYsnRkm-1KE6JzaF3NQxZs";
+
 
 export const  YOUTUBE_VIDEOS_API =  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key="+ YOUTUBE_API_KEY;
 

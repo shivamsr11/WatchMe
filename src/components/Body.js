@@ -7,7 +7,7 @@ const Body = () => {
         <>
         <Header />
         <div className="flex  h-[87vh] overflow-y-auto " >
-            <div className="px-2  m-2" >
+            <div  >
                 <Sidebar/>
             </div> 
             <div>

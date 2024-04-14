@@ -16,11 +16,12 @@ const WatchPage = () => {
     }, [])
  
     return (
-        <div className="flex flex-col mt-3">
-            <div className="flex">
-            <div className="px-3 pt-2">
+        <div className="flex flex-col my-[1vh] mx-[1vw]">
+            <div className="lg:flex">
+            <div className="px-[1vw] mt-[1vh] pt-[1vh] xl:mb-[0vh] mb-[2vh] ">
             { loading ? <ShimmerWatchPage /> : <></>  }
-            <iframe onLoad={() => setLoading(false)} width="800" height="450"
+            <iframe onLoad={() => setLoading(false)}   className="w-[93vw] h-[81vh] sm:w-[93vw] sm:h-[81vh] md:w-[93vw]
+                                 md:h-[81vh] lg:w-[65vw] lg:h-[81vh] xl:w-[63vw] xl:h-[81vh] 2xl:w-[63vw] 2xl:h-[81vh]"
                 src={"https://www.youtube.com/embed/" + searchParams.get("v")}          
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
                  web-share" title="YouTube video player" allowFullScreen></iframe>
@@ -29,7 +30,7 @@ const WatchPage = () => {
                 <LiveChat />
             </div>
             </div>
-                <CommentsContainer />
+                {/* <CommentsContainer /> */}
             </div>
         )
     }

@@ -3,7 +3,7 @@ import VideoContainer from "./VideoContainer";
 
 const MainContainer = () =>{
     return(
-        <div className="ml-2 ">
+        <div className="ml-[1vw] px-[1vw]  ">
             <ButtonList />
             <VideoContainer />
         </div>

@@ -94,30 +94,60 @@ const SignIn = () => {
     <div>
        <div className='absolute'>
         <img className='w-screen sm:w-screen md:w-screen lg:w-screen xl:w-screen 2xl:w-screen h-screen sm:h-screen
-         md:h-screen lg:h-screen'  src = {BG_IMG} alt = "bg-logo" />
+         md:h-screen lg:h-screen xl:h-screen 2xl:h-screen'  src = {BG_IMG} alt = "bg-logo" />
       </div>
-          <form   onSubmit = {(e)=>e?.preventDefault()} className="absolute text-white p-12 w-[60vh] sm:w-[70vh] 
-          md:w-[70vh] lg:w-[70vh] xl:w-[70vh] 2xl:w-[70vh] my-20  mx-auto left-0 right-0 bg-black bg-opacity-90">
-        <h1 className=" text-3xl py-3">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+          <form   onSubmit = {(e)=>e?.preventDefault()} className="absolute text-white px-[4vw] md:px-[3vw] lg:px-[2vw] py-[0.5vh] sm:py-[2vh] w-[52vw] sm:w-[44vw] 
+          md:w-[39vw] lg:w-[30vw] xl:w-[29vw] 2xl:w-[29vw] my-[17vh]   mx-auto left-0 right-0 bg-black bg-opacity-90">
+        <h1 className="text-3xl py-[2vh] mt-[2vh]">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
         {!isSignInForm &&
           <input ref = {fullName} type="text" placeholder="Full Name" title='fullName'
-           className="py-3 my-3 pl-4 w-full bg-gray-800 rounded-lg" />
+           className="py-[1.5vh] mt-[2vh]  pl-[1vw]  w-full bg-gray-800 rounded-lg" />
         }
         <input ref = {email} type="text" placeholder="Email" title='email'
-         className="py-3 my-3 pl-4 w-full bg-gray-800 rounded-lg" onChange={handleInput} />
-         {errors.email && <p>{errors?.email}</p>}
+         className="py-[1.5vh]  pl-[1vw] mt-[3vh] w-full bg-gray-800 rounded-lg" onChange={handleInput} />
+         {errors.email && <p className='mt-[1vh] pl-[0.4vw]'>{errors?.email}</p>}
         <input ref = {password} type="text" placeholder="Password" title='password'
-        className="py-3 my-2 pl-4 w-full bg-gray-800 rounded-lg"   onChange={handleInput} />
-                 {errors.password && <p>{errors?.password}</p>}
-        <button className="py-3  my-6  bg-red-700 w-full rounded-lg"
+        className="py-[1.5vh] mt-[3vh] pl-[1vw] w-full bg-gray-800 rounded-lg"   onChange={handleInput} />
+                 {errors.password && <p className='mt-[1vh] pl-[0.4vw]'>{errors?.password}</p>}
+        <button className="py-[1.5vh] mt-[3vh]   bg-red-700 w-full rounded-lg"
          onClick = {handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"}</button>
         <div className="flex cursor-pointer" onClick={toggleSignInForm}>
-          <p className="py-3 text-gray-400 ">{isSignInForm ? "New User?" : "Already registered?"}</p>
-          <p className="py-3 pl-1">{isSignInForm ? "Sign up Now" : "Sign In Now"}</p>
+          <p className="py-[1vh]  mt-[3vh] pl-[0.4vw] text-gray-400 ">{isSignInForm ? "New User?" : "Already registered?"}</p>
+          <p className="py-[1vh] mt-[3vh] pl-[0.4vw]">{isSignInForm ? "Sign up Now" : "Sign In Now"}</p>
           </div>
         </form>
     </div>
   )
 }
 
-export default SignIn
+export default SignIn;
+
+
+//  return (
+//    <div>
+//       <div className='absolute'>
+//       <img className='w-screen sm:w-screen md:w-screen lg:w-screen xl:w-screen 2xl:w-screen h-screen sm:h-screen
+//        md:h-screen lg:h-screen'  src = {BG_IMG} alt = "bg-logo" />
+//     </div>
+//         <form   onSubmit = {(e)=>e?.preventDefault()} className="absolute text-white p-12 w-[60vh] sm:w-[70vh] 
+//         md:w-[70vh] lg:w-[70vh] xl:w-[70vh] 2xl:w-[70vh] my-20  mx-auto left-0 right-0 bg-black bg-opacity-90">
+//       <h1 className=" text-3xl py-3">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+//       {!isSignInForm &&
+//         <input ref = {fullName} type="text" placeholder="Full Name" title='fullName'
+//          className="py-3 my-3 pl-4 w-full bg-gray-800 rounded-lg" />
+//       }
+//       <input ref = {email} type="text" placeholder="Email" title='email'
+//        className="py-3 my-3 pl-4 w-full bg-gray-800 rounded-lg" onChange={handleInput} />
+//        {errors.email && <p>{errors?.email}</p>}
+//       <input ref = {password} type="text" placeholder="Password" title='password'
+//       className="py-3 my-2 pl-4 w-full bg-gray-800 rounded-lg"   onChange={handleInput} />
+//                {errors.password && <p>{errors?.password}</p>}
+//       <button className="py-3  my-6  bg-red-700 w-full rounded-lg"
+//        onClick = {handleButtonClick}>{isSignInForm ? "Sign In" : "Sign Up"}</button>
+//       <div className="flex cursor-pointer" onClick={toggleSignInForm}>
+//         <p className="py-3 text-gray-400 ">{isSignInForm ? "New User?" : "Already registered?"}</p>
+//         <p className="py-3 pl-1">{isSignInForm ? "Sign up Now" : "Sign In Now"}</p>
+//         </div>
+//       </form>
+//   </div>
+// )
